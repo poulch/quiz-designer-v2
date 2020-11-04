@@ -5,7 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "yarn --frozen-lockfile && lerna bootstrap && lerna run start --parallel"
+    "start": "yarn --frozen-lockfile && lerna bootstrap && lerna run start --parallel",
+    "lint": "lerna run lint --stream"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.6.1",
