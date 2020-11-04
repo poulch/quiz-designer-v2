@@ -1,0 +1,43 @@
+Arguments: 
+  /Users/pawel.chyla/.nvm/versions/node/v12.13.1/bin/node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js workspace server add express @types/express
+
+PATH: 
+  /Users/pawel.chyla/.nvm/versions/node/v12.13.1/bin:/Users/pawel.chyla/.okta/bin:/usr/local/opt/node@10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/pawel.chyla/Projects/_DEV/quiz-designer/node_modules/.bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.13.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/pawel.chyla/Projects/_DEV/quiz-designer/packages/www/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "quiz-designer",
+    "private": true,
+    "workspaces": [
+      "packages/*"
+    ],
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+      "lerna": "^3.16.5"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

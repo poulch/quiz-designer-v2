@@ -1,0 +1,13 @@
+{
+  "name": "quiz-designer",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "yarn --frozen-lockfile && lerna bootstrap && lerna run start --parallel"
+  },
+  "devDependencies": {
+    "lerna": "^3.16.5"
+  }
+}
