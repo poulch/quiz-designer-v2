@@ -1,9 +1,9 @@
-import getEnv from 'getenv';
-import {config as  dotenv} from 'dotenv';
+import getenv from 'getenv';
+import { config as dotenv } from 'dotenv';
 dotenv();
 
-const config: {[key: string]: any} = {}
+const config: { [key: string]: any } = {};
 
-config.port = getEnv.int('PORT', 4004);
+config.port = getenv.int('PORT', 4004);
 
-export default  config;
+export default config;
