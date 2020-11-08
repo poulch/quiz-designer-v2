@@ -7,7 +7,7 @@ const PORT = config.port;
 let server: any;
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useNewUrlParser', true);
-mongoose.connect(config.dbConnectionUrl, { useFindAndModify: false }).then(() => {
+mongoose.connect(`${config.dbConnectionUrl}?retryWrites=false`, { useFindAndModify: false }).then(() => {
   server = app.listen(PORT, () => {
     logger.info(`Server is listinig on port: ${PORT}`);
   });
