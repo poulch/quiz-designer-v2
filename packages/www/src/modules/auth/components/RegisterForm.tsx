@@ -2,14 +2,15 @@ import React from 'react';
 import { Input, Form, Button } from 'antd';
 import { UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import { IRegisterUser } from '../../../pages/register';
 
-const RegisterForm: React.FC = () => {
-  const onSubmit = React.useCallback((values) => {
-    console.log(values);
-  }, []);
+interface IRegisterForm {
+  onSubmit: (values: IRegisterUser) => void;
+}
 
+const RegisterForm: React.FC<IRegisterForm> = ({ onSubmit }) => {
   return (
-    <Form name='login' className='login-form' initialValues={{ remember: true }} onFinish={onSubmit}>
+    <Form name='login' onFinish={onSubmit}>
       <Form.Item name='displayName' rules={[{ required: true, message: 'Please input your Display Name!' }]}>
         <Input prefix={<UserOutlined />} placeholder='Display name' />
       </Form.Item>

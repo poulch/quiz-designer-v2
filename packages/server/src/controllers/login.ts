@@ -2,6 +2,7 @@ import { Response, Request } from 'express';
 import brcypt from 'bcrypt';
 import User from '../models/User';
 import logger from '../config/logger';
+import { Session } from '../types';
 
 const loginController = async (req: Request, res: Response) => {
   const { email, password } = req.body;
@@ -22,8 +23,10 @@ const loginController = async (req: Request, res: Response) => {
     return res.status(409).send('Authentication failed!');
   }
 
+  (req.session as Session).user = existingUser;
+
   logger.info('Login sucessfull');
-  res.sendStatus(200);
+  res.status(200).json(existingUser);
 };
 
 export default loginController;

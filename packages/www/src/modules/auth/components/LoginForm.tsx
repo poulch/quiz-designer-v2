@@ -2,12 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { Input, Form, Button, Checkbox } from 'antd';
 import { MailOutlined, LockOutlined } from '@ant-design/icons';
+import { IUser } from '../../../types/user';
 
-const LoginForm: React.FC = () => {
-  const onSubmit = React.useCallback((values) => {
-    console.log(values);
-  }, []);
+interface ILoginFormProps {
+  onSubmit: (values: IUser) => void;
+}
 
+const LoginForm: React.FC<ILoginFormProps> = ({ onSubmit }) => {
   return (
     <Form name='login' className='login-form' initialValues={{ remember: true }} onFinish={onSubmit}>
       <Form.Item

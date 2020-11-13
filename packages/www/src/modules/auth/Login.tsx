@@ -2,13 +2,18 @@ import React from 'react';
 import Card, { CardTitle } from '../../components/card/Card';
 import Container from '../../components/container/Container';
 import LoginForm from './components/LoginForm';
+import { IUser } from '../../types/user';
 
-const LoginPage: React.FC = () => {
+interface ILoginPageProps {
+  onSubmit: (values: IUser) => void;
+}
+
+const LoginPage: React.FC<ILoginPageProps> = ({ onSubmit }) => {
   return (
     <Container>
       <Card>
         <CardTitle>Log In</CardTitle>
-        <LoginForm />
+        <LoginForm onSubmit={onSubmit} />
       </Card>
     </Container>
   );
